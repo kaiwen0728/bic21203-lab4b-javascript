@@ -2,8 +2,8 @@
 # BIC21203 Lab 4b – JSON and jQuery
 
 **Name:** ANG KAI WEN  
-**Student ID:** AI240154
-**Lab b:** CLIENT-SIDE SCRIPTING (JSON and jQuery)
+**Student ID:** AI240154  
+**Lab:** Lab 4b – Client-Side Scripting (JSON and jQuery)
 
 ## Description
 
