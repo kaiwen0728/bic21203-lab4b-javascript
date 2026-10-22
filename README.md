@@ -3,6 +3,7 @@
 
 **Name:** ANG KAI WEN  
 **Student ID:** AI240154
+**Lab b:** CLIENT-SIDE SCRIPTING (JSON and jQuery)
 
 ## Description
 
