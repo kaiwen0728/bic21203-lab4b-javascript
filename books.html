@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Information</title>
+</head>
+<body>
+
+    <h1>Book Information</h1>
+
+    <h2>First Book Title</h2>
+    <p id="firstTitle"></p>
+
+    <h2>Second Book Author</h2>
+    <p id="secondAuthor"></p>
+
+    <h2>Book Genres</h2>
+    <div id="genres"></div>
+
+    <p id="error"></p>
+
+    <script>
+        fetch("books.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load JSON");
+                }
+                return response.json();
+            })
+            .then(data => {
+                const books = data.books;
+
+                document.getElementById("firstTitle")
+                    .textContent = books[0].title;
+
+                document.getElementById("secondAuthor")
+                    .textContent = books[1].author;
+
+                const genresDiv =
+                    document.getElementById("genres");
+
+                books.forEach(book => {
+                    const p = document.createElement("p");
+
+                    p.textContent =
+                        book.title + " — " +
+                        book.genres.join(", ");
+
+                    genresDiv.appendChild(p);
+                });
+            })
+            .catch(error => {
+                document.getElementById("error")
+                    .textContent =
+                    "Sorry, unable to load book information.";
+                console.error(error);
+            });
+    </script>
+
+</body>
+</html>
